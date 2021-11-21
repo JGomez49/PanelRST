@@ -1,0 +1,37 @@
+
+    <%- include("partials/head.ejs") %> 
+    <%- include ("partials/sidenav") %>
+
+    <div class="main p-4"> 
+        <%- include ("partials/navigation") %> 
+
+        <h1>Co-op</h1>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <% images.forEach(function (image) { %>
+
+                    <% if (image.description == 'Coop') { %>    
+
+                        <div class="card border-primary mb-3 animate__animated animate__rubberBand" style="max-width: 10rem;">
+                            <div class="card-header"><%= image.title %>
+                                <div><a href="/image/<%= image._id %>/delete">Delete</a></div>
+                            </div>
+                            <img src="<%= image.path %>" class="img-fluid rounded-start" style="width: 10rem;">
+                            <div class="card-body text-primary">
+                                <p style="position: absolute; bottom: 30%; left:0%; background-color:black; width: 30%;">$<%= image.precio %></p>
+                                <a href="/image/<%= image._id %>/add" class="btn btn-success d-md-block">Add</a>
+                            </div>
+                        </div>
+
+                    <% } %>
+
+                <% }) %>
+        </div>
+    </div>
+
+</body>
+
+<%- include ("partials/footer") %>
+
+</html>

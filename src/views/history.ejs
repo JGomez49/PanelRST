@@ -1,0 +1,45 @@
+
+    <%- include("partials/head.ejs") %> 
+    <%- include ("partials/sidenav") %>
+
+    <div class="main p-4"> 
+        <%- include ("partials/navigation") %> 
+
+        
+        <div class="d-grid gap-2 mb-3">
+            <button class="btn btn-secondary" type="button" id="btnExport">Export Report</button>
+        </div>
+
+        <table class="table table-dark table-striped" id="table">
+
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Price</th>                   
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% index=1 %> 
+                <% registrosMercado.forEach(registroMercado => { %>
+                    <tr>
+                        <th scope="row"><%= index %> </th>
+                        <td><%= registroMercado.fecha %></td>
+                        <td><%= registroMercado.hora %></td>
+                        <td>$ <%= registroMercado.valor %></td>
+                        <td><a href="/registro/<%= registroMercado._id %>/delete" type="button" class="btn btn-danger btn-sm">Delete</a></td>
+                    </tr>
+                    <% index = index + 1 %> 
+                <% }) %>
+            </tbody>
+        </table>
+
+    </div>
+    
+    
+</body>
+<%- include ("partials/footer") %>
+</html>

@@ -1,0 +1,18 @@
+
+GIT:
+git init
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/JGomez49/PanelRST.git
+git push -u origin main
+
+git remote add origin https://github.com/JGomez49/PanelRST.git
+git branch -M main
+git push -u origin main
+
+El Meta de John:
+MONGODB_URI = mongodb+srv://USER:NuDmqT4Wl3JJKzen@cluster0.g7lcu.mongodb.net/DB?retryWrites=true&w=majority
+CLOUDINARY_NAME = metacortex
+CLOUDINARY_API_KEY = 293354815568273
+CLOUDINARY_API_SECRET = H8gfncCrXemJuPNMf56ncpMKJsU
+CLOUDINARY_URL = cloudinary://293354815568273:H8gfncCrXemJuPNMf56ncpMKJsU@metacortex

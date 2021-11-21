@@ -1,0 +1,43 @@
+<%- include("partials/head.ejs") %>
+<!-- %- include ("partials/sidenav") % -->
+
+<div class="main p-4"> 
+    <!-- %- include ("partials/navigation") % -->
+    <div class="container">
+        <div class="row">
+            <div id="liveAlertPlaceholder"></div>
+            
+            <!-- Main Body -->
+            <div class="col-sm-10">
+
+
+
+                <form action="/history" method="POST" enctype="multipart/form-data"> 
+                    <div class="p-4">
+                        <a href="/mcp20reset/<%= status %> " class="btn btn-primary" type="button" id="mcp20reset">
+                            MCP20 Reset:  
+                            <% if (status == true) { %>
+                                OFF
+                            <% } %>
+                            <% if (status == false) { %>
+                                ON
+                            <% } %> 
+                        </a>
+                    </div>                  
+                </form>
+
+            </div>
+
+            <!-- Right Side Panel -->
+            <div class="mb-3 mt-3 col-sm-2">               
+                
+
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+</body>
+<%- include ("partials/footer") %>
+</html>
